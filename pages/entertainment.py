@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
 from pages.base import BasePage
+
 FIRST_BREAD_CRUMB = (By.XPATH, '//a[@class="home ac-gf-breadcrumbs-home"]')
 SECOND_BREAD_CRUMB = (By.XPATH, '//li[@class="ac-gf-breadcrumbs-item"]/span')
 
