@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import pytest
+import os
 
 from pages.start import StartPage
 from pages.support import SupportPage
@@ -12,7 +13,8 @@ START_URL = 'https://www.apple.com/'
 @pytest.fixture(scope='session')
 def browser():
     options = Options()
-    options.add_argument('--headless')
+    if os.getenv('HEADLESS'):
+        options.add_argument('--headless')
     options.add_argument('--window-size=1024,600')
     chrome_browser = webdriver.Chrome(options=options)
     chrome_browser.implicitly_wait(0.5)
